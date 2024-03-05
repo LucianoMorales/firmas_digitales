@@ -1,0 +1,598 @@
+@media (min-width:1024px){
+* {
+
+	margin:0;
+	padding:0;
+	box-sizing: 0;
+
+}
+#responsive-mision{
+display: none;
+}
+#menu-sesion{
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 15px;
+
+}
+
+
+
+#section1 {
+    width: 100%;
+    height: 11em;
+ 
+}
+
+#menu-menu-lista{
+    width: 86%;
+    height: 4em;
+}
+
+#redes{
+    margin-right: 1em;
+    
+}
+#content-all{
+    background: rgb(17,106,44);
+background: linear-gradient(164deg, rgba(17,106,44,1) 5%, rgba(114,226,129,1) 100%);
+
+}
+.dropdown-toggle{
+    background: #cb2d3e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+
+.texto{
+    font-family: 'Crimson Text';
+    text-align: justify;
+    font-size: 18px;
+}
+#menu-lista, #menu-lista-li{
+    text-align: center;;
+    display:inline;
+    padding-left:3px;
+    padding-right:3px;
+    font-size: 20px;
+    font-family: system-ui;
+}
+#menu-lista, #menu-lista-li,#texto-vertical{
+text-decoration: none;
+font-family: 'Titillium Web', serif;
+    color: black;
+}
+#menu-lista, #menu-lista-li,#texto-vertical:hover{
+  color: darkred;
+    }
+#separador{
+  color: darkgreen;
+    }
+
+
+#redes{
+    text-decoration: none;
+}
+.bi-twitter,.bi-instagram,.bi-facebook{
+    font-size: 20px;
+}
+.bi-instagram:hover{
+    color: #c02425; /* fallback for old browsers */
+    color: -webkit-linear-gradient(to right, #c02425, #f0cb35); /* Chrome 10-25, Safari 5.1-6 */
+    color: linear-gradient(to right, #c02425, #f0cb35); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#conten{
+   
+width: 100%;
+height: 73%;
+background: rgb(17,106,44);
+background: linear-gradient(164deg, rgba(17,106,44,1) 5%, rgba(114,226,129,1) 100%);
+}       
+#imagen-ancec{
+    margin-top: -20px;
+    margin-left: -75px;
+}
+#texto-ancec{
+    margin-left:8%;
+    margin-top: 4em;
+    color: aliceblue;
+    width: 80vh;
+    height: 56vh;
+  
+    margin-right: -60px;
+
+}
+#titulo{
+
+font-size: 60px;
+font-family: fantasy;
+
+}
+#sub-titulo{
+    font-size: 30px;
+    text-align: right;
+    font-family: 'Abril Fatface', serif;
+}
+#mini-titulo{
+color: white;
+font-family: 'Abril Fatface', serif;
+font-size: 18px;
+}
+
+#login{
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#menus{
+    background: white;
+    color: green;
+    border: 0;
+   
+}
+#inicio-sesion{
+    text-decoration: none;
+    color: black;;
+}
+#quienes-somos{
+    margin-top: 18%;
+}
+#img-quienes-somos{
+    margin-top: 8%;
+}
+
+#titulo-section2{
+    font-family: 'Abril Fatface', serif;
+    color: darkslategrey;
+}
+#texto-section2{
+
+    font-family: 'Mukta', serif;
+    font-size: 18px;
+}
+#btn-leer-mas{
+margin-left:70%;
+}
+
+#lista-menu, ul{
+
+list-style-type: none;
+font-size: 24px;
+}
+#lista-menu, #lista-menu-horizontal, #lista-menu-li,#texto-horizontal{
+    text-decoration: none;
+    margin-top: 1em;
+    font-family: 'Poppins', serif;
+    color:white;
+}
+
+#offcanvasRightLabel{
+    font-family: 'Abril Fatface', serif;
+    color:white;
+}
+#offcanvasRight{
+    background: rgb(138, 30, 30);
+}
+
+#servicios{
+    height: 100vh;
+    width: 100%;
+    margin-top: 4em;
+  
+}
+#servicio-titulo{
+    text-align: center;;
+    font-size: 30px;
+    color: darkgreen;
+    font-family: 'Abril Fatface', sans;
+    margin-top: 4em;
+
+}
+
+
+#decoracion{
+    box-shadow: 4px 4px 5px #999;
+   
+}
+
+#decoracion:hover {
+width: 95%;
+margin-top: 16px;
+}
+.card-title{
+    color: darkgreen;
+    text-align: center;
+}
+#txtmv{
+    font-size: 2em;
+    font-family: 'Abril Fatface', serif;
+    color:cadetblue
+}
+
+
+#control-imagen{
+
+    opacity: 1;
+}
+
+.card:hover{
+    opacity: 1;
+}
+#header{
+    background: rgb(17,106,44);
+    background: linear-gradient(164deg, rgba(17,106,44,1) 5%, rgba(114,226,129,1) 100%);
+    
+}
+
+/* ------------------------------------------------------- */
+/* <!-nuevo-> */
+#section4 {
+    z-index: 1;
+    width: 100%;
+    height: 20%;
+    margin-top: 2em;
+    background:  rgb(25, 33, 42);
+}
+.accordion-item{
+    display:none !important;
+   }
+#icon_footer_instagram,#icon_footer_facebook,#icon_footer_twitter{
+    font-size: 1.4em;
+    color: white;
+}
+#icon_footer_instagram:hover{
+    color: #c02425; /* fallback for old browsers */
+    color: -webkit-linear-gradient(to right, #c02425, #f0cb35); /* Chrome 10-25, Safari 5.1-6 */
+    color: linear-gradient(to right, #c02425, #f0cb35); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#icon_footer_facebook:hover{
+    color:cornflowerblue;
+}
+#icon_footer_twitter:hover{
+    color: #1D9BF0;
+}
+#menu_ubicacion_titulo{
+ 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+#menu_ubicacion, #menu_ubicacion_titulo{
+text-align: justify;
+color: white;
+}
+#menu_ubicacion{
+color: darkgray;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#correo_{
+    font-size: 12px;
+}
+
+#texto-horizontal_button
+{
+    background-color: transparent !important;
+}
+.accordion-body{
+    font-size: 12px;
+}
+button{
+    background: rebeccapurple;
+}
+}
+
+
+@media (min-width:0px) and (max-width:1024px){
+    * {
+
+        margin:0;
+        padding:0;
+        box-sizing: 0;
+    
+    }
+
+    #pc-mision{
+        display: none !important;
+    }
+   
+    #siguenos{
+        display:none !important;
+    }
+  
+    
+    .dropdown-toggle{
+        background: #cb2d3e;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+    }
+    
+    #section1 {
+        width: 100%;
+        height:95%;
+        
+    }
+    
+    #menu-menu-lista{
+        width: 86%;
+        height: 4em;
+    }
+    
+    #redes{
+        margin-right: 1em;
+        text-align: left
+        
+    }
+
+/* section 2------------------------------------------------- */
+
+    #servicios{
+        height: 100vh;
+        width: 100%;
+        
+    }
+
+    #menu-lista, #menu-lista-li{
+        text-align: center;;
+        display:inline;
+        padding-left:3px;
+        padding-right:3px;
+        font-size: 20px;
+        font-family: system-ui;
+    }
+    #menu-lista, #menu-lista-li,#texto-vertical{
+    text-decoration: none;
+    font-family: 'Titillium Web', serif;
+        color: black;
+    }
+    #menu-lista, #menu-lista-li,#texto-vertical:hover{
+      color: darkred;
+        }
+        #contactenos:hover{
+            color: black;
+        }
+    #separador{
+      color: darkgreen;
+        }
+    
+  /* section 2 ----------------------------------------------------------   */
+    
+/* ------------------diseño responsive--- */
+#responsive-section2
+{
+margin-top: 3em;
+}
+
+
+
+    /* section 3--------------------------------- */
+
+    #section4{
+        text-align: center;
+        z-index: 1;
+        width: 100%;
+        height: 10%;
+        background:  rgb(25, 33, 42);
+    }
+    #icon_sec4{
+        text-align: center;
+    }
+    #redes{
+        text-decoration: none;
+    }
+    #icon_sec0,#icon_instagram{
+        font-size: 20px;
+    }
+    #icon_instagram:hover{
+        color: #c02425; /* fallback for old browsers */
+        color: -webkit-linear-gradient(to right, #c02425, #f0cb35); /* Chrome 10-25, Safari 5.1-6 */
+        color: linear-gradient(to right, #c02425, #f0cb35); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    #conten{
+       margin-top: 1.8em;
+    width: 100%;
+    height: 30em;
+    background: rgb(17,106,44);
+    background: linear-gradient(164deg, rgba(17,106,44,1) 5%, rgba(114,226,129,1) 100%);
+    
+}       
+    #imagen-ancec{
+        text-align: center;
+       
+   width: 3em;
+ 
+    }
+    #ancec-edi{
+       
+     
+        width: 100%;
+    }
+.bi-instagram,.bi-facebook,.bi-twitter{
+    color: white;
+}
+    #texto-ancec{
+     text-align: left;
+        margin-top: 2em;
+        color: aliceblue;
+        width: 24em;
+        height: 40%;
+      text-align: center;
+        margin: 0.4em;
+       
+    
+    }
+    #titulo{
+   
+    font-size: 2em;
+    font-family: fantasy;
+    text-align: center;
+    
+    }
+    #sub-titulo{
+        font-size: 1em;
+        text-align: center;
+        font-family: 'Abril Fatface', serif;
+    }
+    #mini-titulo{
+    color: white;
+    font-family: 'Abril Fatface', serif;
+    font-size: 18px;
+    }
+    
+    #login{
+        text-decoration: none;
+        font-size: 12px;
+    }
+    
+    #menus{
+        background: white;
+        color: green;
+        border: 0;
+       
+    }
+    #inicio-sesion{
+        text-decoration: none;
+        color: black;;
+    }
+ 
+    
+    #lista-menu, ul,#responsive-button{
+    
+    list-style-type: none;
+    font-size: 24px;
+    }
+    #lista-menu, #lista-menu-horizontal, #lista-menu-li,#texto-horizontal,#responsive-button{
+        text-decoration: none;
+        margin-top: 0.9em;
+        font-family: 'Poppins', serif;
+        color:white;
+    }
+    
+    #offcanvasRightLabel{
+        font-family: 'Abril Fatface', serif;
+        color:white;
+    }
+    #offcanvasRight{
+        background: rgb(138, 30, 30);
+    }
+   
+    #pensamiento{
+      
+    font-family: 'Indie Flower';
+    font-size: 3em;
+    color: bisque;
+    }
+    #autor-pensamiento{
+        color: beige;
+        font-size: 2em;
+          
+    font-family: 'Indie Flower';
+    }
+    #section3-pen{
+        margin-top: 9em;
+    }
+    /* <!-nuevo-> */
+
+    #contenedor{
+    margin-top: -1rem;
+    text-align: center;
+    overflow: hidden; position: absolute;
+    width: 100%;
+  
+    }
+    #menu_ubicacion_titulo{
+        margin-top: 2em;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      
+    }
+#menu_ubicacion, #menu_ubicacion_titulo{
+    text-align: Center;
+    color: white;
+}
+#menu_ubicacion{
+    color: darkgray;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#icon_footer_instagram,#icon_footer_facebook,#icon_footer_twitter{
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+}
+#icon_footer_instagram:hover{
+    color: #c02425; /* fallback for old browsers */
+    color: -webkit-linear-gradient(to right, #c02425, #f0cb35); /* Chrome 10-25, Safari 5.1-6 */
+    color: linear-gradient(to right, #c02425, #f0cb35); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#icon_footer_facebook:hover{
+    color: blue;
+}
+#icon_footer_twitter:hover{
+    color: #1D9BF0;
+}
+.accordion-item{
+    display:block !important;
+   }
+#menu-menu-lista{
+    display: none;
+}
+#responsive-menu{
+    color: white;
+    margin-top: 0;
+    text-decoration: none;
+    font-size: 0.5em;
+    margin-left: 0.5em;
+}
+#responsive-button{
+    color: white;
+}
+#responsive-menu:hover{
+    color :red;
+}
+#responsive-menu-menu{
+ background: rgb(112, 22, 22); 
+ 
+}
+#siguenos{
+    display:none !important;
+}
+#menu-completo{
+    background: rgb(17,106,44);
+    background: linear-gradient(164deg, rgba(17,106,44,1) 5%, rgba(114,226,129,1) 100%);
+    
+}
+
+#servicios{
+ 
+    height: 65em;
+    width: 100%;
+  margin-top: 2em;
+}
+#servicio-titulo{
+    text-align: center;;
+    font-size: 30px;
+    color: darkgreen;
+    font-family: 'Abril Fatface', sans;
+  
+
+}
+
+
+.texto{
+    font-family: 'Crimson Text';
+    text-align: justify;
+    font-size: 18px;
+}
+#txtmv{
+    font-size: 2em;
+    font-family: 'Abril Fatface', serif;
+    color:cadetblue
+}
+
+
+  }

@@ -1,0 +1,37 @@
+window.sr = ScrollReveal();
+sr.reveal('#sub-menu-vertical',{
+    duration:3000,
+    origin:'bottom',
+    distance:'-100px'
+});
+sr.reveal('#header',{
+    duration:3000,
+    origin:'bottom',
+    distance:'-100px'
+});
+sr.reveal('#texto-ancec',{
+    duration:3000,
+    origin:'top',
+    distance:'-200px'
+});
+sr.reveal('#conten',{
+    duration:3000,
+    origin:'left',
+    distance:'-200px'
+});
+sr.reveal('#imagen-ancec',{
+    duration:3000,
+    origin:'left',
+    distance:'-200px'
+});
+document.getElementById('section2').focus();
+sr.reveal('#section2',{
+    duration:3000,
+    origin:'right',
+    distance:'-400px'
+});
+sr.reveal('#content-all',{
+    duration:3000,
+    origin:'right',
+    distance:'-400px'
+});

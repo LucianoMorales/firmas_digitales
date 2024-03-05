@@ -1,0 +1,122 @@
+*{
+
+    margin:0;
+	padding:0;
+	box-sizing: 0;
+}
+body{
+   
+    width: 98%;
+}
+
+#menu_lateral{
+float: left;
+width: 15%;
+height: 100vh;
+background:#19212A;
+
+    text-align: center;
+
+}
+
+
+.toolbar {
+margin-left: 75%;
+    width: 25%;
+    height: 100vh;
+    padding-top: 5em;
+
+
+}
+
+#pdf-container {
+
+    margin-left: 220px;
+    width: 110vh;
+margin-top: -97vh;
+height: 650px;
+position: fixed;
+z-index: 12;
+overflow-y: auto;
+
+}
+
+
+.toolbar .tool {
+
+    color: #fff;
+    
+
+}
+
+.toolbar .tool label,
+.toolbar .tool select,
+.toolbar .tool input {
+    display: inline-block;
+    width: auto;
+    height: auto !important;
+    padding: 0;
+
+}
+
+
+.tool{
+    margin:3px;
+}
+
+.toolbar .tool .color-tool.active {
+    -webkit-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+
+}
+
+
+
+.toolbar .tool .tool-button {
+border: 0;
+
+font-size: 3vh;
+height: 2.2em;
+width:50vh;
+text-align: left;
+margin-left: 10px;
+
+}
+
+.toolbar .tool .tool-button:hover,
+.toolbar .tool .tool-button.active {
+    height: 2.4em;
+  color: aliceblue;
+    background-color: rgb(82, 86, 89);
+    border-color: rgb(82, 86, 89);
+    width:50vh;
+    margin-left: -10px;
+    background: rgb(82, 86, 89);
+}
+
+
+
+.canvas-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+.tool label{
+font-size: 20px;
+color: #19212A;
+margin-left: 15px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+#titulo{
+color: #19212A;
+font-size: 30px;
+text-align: center;
+
+}
+
+#btn i{
+font-size: 25px;
+
+}

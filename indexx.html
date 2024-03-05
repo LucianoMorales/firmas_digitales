@@ -1,0 +1,1030 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ANCEC Santiago</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+	<link rel="stylesheet" href="estilos/style.css">
+	<!-- alertify  -->
+	<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+
+</head>
+<body>
+	<section id="menu_lateral">
+		<div class="tool" id="titulo" style="color: aliceblue; margin-top: 3em; ">
+			<span> <strong>Ingreso de Firmas y comentarios</strong> </span>
+		</div>
+		<img src="imagen/ancec.png" alt="" width="90em" style="margin-top:16em">	
+		</section>
+<div class="toolbar" >
+	<!-- <div class="tool">
+		<label for="">Brush size</label>
+		<input type="number" class="form-control text-right" value="1" id="brush-size" max="50">
+	</div> -->
+	<div><p>Cantidad de documentos restantes: <strong><span id="pdf-count"></span></strong> </p>
+	
+	</div>
+	
+
+	<div class="tool">
+		<button type="button" class="btn btn-primary" id="documentos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+			Cargar Datos
+		  </button>
+
+	</div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="staticBackdropLabel">Información</h1>
+		  <button type="button" class="btn-close" id="close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body" style="text-align: center;">
+			<div class="spinner-border text-success" id="espera" role="status">
+				<span class="visually-hidden">Loading...</span>
+			  </div>
+			  <div style="text-align: center; margin-top: -20px;" id="advertencia" >
+				<img src="imagen/advertencia.png" alt="" width="50px">
+			  </div>
+			  <div style="text-align: center; margin-top: -20px;" id="correcto">
+				<img src="imagen/comprobado.png" alt="" width="50px">
+			  </div>
+
+			  <div> <label id="valores"></label></div>
+		</div>
+	
+	  </div>
+	</div>
+  </div>
+
+
+
+	<div class="tool" style="margin-top: 15px;">
+		<label for="">Tamaño de texto</label>
+		<select id="font-size" class="form-control" style="margin-left: 15px; font-size: 14px;">
+			<option value="10">10</option>
+			<option value="12">12</option>
+			<option value="16" selected>16</option>
+			<option value="18">18</option>
+			<option value="24">24</option>
+			<option value="32">32</option>
+			<option value="48">48</option>
+			<option value="64">64</option>
+			<option value="72">72</option>
+			<option value="108">108</option>
+		</select>
+	</div>
+	<br>
+	<div class="tool">
+		<button id="buscar"  type="button" class="btn btn-info" > Mostrar Resultado</button>
+	</div>
+	<br>
+	<div class="container text-left">
+		<div class="row">
+		  <div class="col-sm-12">
+			<label for="">Comentarios Frecuentes</label>
+		  </div>
+	
+		</div>
+	</div>
+	<div class="container text-left">
+		<div class="row">
+		  <div class="col-sm-12"><select class="form-select" aria-label="Default select example" id="coment-frecuentes">
+			<option selected>Seleccione</option>
+			<option value="1">Control de Mamografía Anual</option>
+			<option value="2">Complementar realizando Ultrasonido de mamas</option>
+			<option value="3">Control Ultrasonido mamas en 6 meses</option>
+			<option value="4">Referencia de Cirugía General</option>
+			<option value="5">Referencia de Tomosíntesis</option>
+			<option value="6">Seguimiento por Médico Tratante</option>
+			<option value="7">Referencia para Biopsia de Mama por cirugia</option>
+			<option value="8">Refencia a Urologia</option>
+			<option value="9">Refencia Gastroenterologia</option>
+			<option value="10">Refencia a Consulta Oncologica</option>
+			<option value="11">Refencia a HRVeraguas</option>
+			<option value="12">Navegacion de pacientes por ANCEC</option>
+		  </select></div>
+		 
+		</div>
+		
+		
+		</div>
+		<br>
+	  <div class="form-floating">
+		<textarea class="form-control" placeholder="Leave a comment here" id="textoo" style="height: 100px"></textarea>
+		<label for="textoo">agregar Comentarios
+		</label>
+	  </div>
+	  <div class="row">
+		<div class="col">
+			<input type="checkbox" id="seleccion" group="firma" name="doc_bati" value="imagen/digital/doctora.png">
+			<label for="vehicle2"> Doc. Batista</label><br>
+		</div>
+		<div class="col">
+			<input type="checkbox" id="seleccion" group="firmas" name="doc_meli" value="imagen/digital/firma.png">
+			<label for="vehicle2"> Doc. Melillo</label><br>
+		</div>
+	  </div>
+
+
+
+
+	  <div class="row" style="text-align: center;">
+		<div class="col">
+			<div class="tool">
+				<button id="save" class="btn btn-success"  style="margin-top: 15px;"><i class="fa fa-hdd-o" aria-hidden="true"></i> <label for="" style="color: aliceblue;">Guardar Información</label></i> </button>
+		
+			</div>
+		</div>
+	  </div>
+
+
+	
+	
+	
+</div>
+<div id="pdf-container" >
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/count.js"></script>
+
+<script src="js.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+<script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.3.0/fabric.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.2.0/jspdf.umd.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<!-- <script src="js/newjs.js"></script> -->
+<script src="js/contra.js"></script>
+
+<script>
+	const select = document.getElementById('coment-frecuentes');
+const texto = document.getElementById('textoo');
+
+select.addEventListener('change', function() {
+  texto.value = select.options[select.selectedIndex].text;
+});
+</script>
+
+
+<script>
+	
+	//para  escoger un solo chexbox
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('click', () => {
+	// Deseleccionar todos los checkboxes excepto el actual
+	checkboxes.forEach((cb) => {
+	  if (cb !== checkbox) {
+		cb.checked = false;
+	  }
+	});
+  });
+});
+
+let algunoSeleccionado = false;
+
+for (let i = 0; i < checkboxes.length; i++) {
+  if (checkboxes[i].checked) {
+    algunoSeleccionado = true;
+    break;
+  }
+}
+
+
+
+
+$('#documentos').click(function(e){
+	e.preventDefault();
+var modal = document.getElementById("staticBackdro p");
+var espera = document.getElementById("espera");
+var advertencia = document.getElementById("advertencia");
+var correcto= document.getElementById("correcto");
+advertencia.style.visibility = 'hidden';
+correcto.style.visibility = 'hidden';   
+$.ajax({
+		
+		url:'php/directorios.php',
+		type: 'post',
+		beforeSend: function () {
+			 // warning notification
+  // Shorthand for:
+  // alertify.notify( message, 'warning', [wait, callback]);
+ $("#valores").html("Procesando, espere por favor...");
+                },
+	success: function(datos){
+if (datos=="No se encuentran archivos para subir"){
+	espera.style.visibility = 'hidden';
+	advertencia.style.visibility = 'visible';
+
+	$("#valores").html(datos);
+	
+		$(document).ready(function() {
+  // indicamos que se ejecuta la funcion a los 5 segundos de haberse
+  // cargado la pagina
+  setTimeout(clickbutton, 2000);
+
+  function clickbutton() {
+    // simulamos el click del mouse en el boton del formulario
+    $("#close").click();
+   
+  }
+  $('#close').on('click',function() {
+    console.log('action button clicked');
+	window.location.reload();
+  });
+});
+}
+else{
+	espera.style.visibility = 'hidden';
+	correcto.style.visibility = 'visible';
+		$("#valores").html(datos);
+	
+		$(document).ready(function() {
+  // indicamos que se ejecuta la funcion a los 5 segundos de haberse
+  // cargado la pagina
+  setTimeout(clickbutton, 2000);
+
+  function clickbutton() {
+    // simulamos el click del mouse en el boton del formulario
+    $("#close").click();
+   
+  }
+  $('#close').on('click',function() {
+    console.log('action button clicked');
+	window.location.reload();
+  });
+});
+}
+
+}
+
+	});
+});
+
+
+fabric.LineArrow = fabric.util.createClass(fabric.Line, {
+
+type: 'lineArrow',
+
+initialize: function(element, options) {
+  options || (options = {});
+  this.callSuper('initialize', element, options);
+},
+
+toObject: function() {
+  return fabric.util.object.extend(this.callSuper('toObject'));
+},
+
+_render: function(ctx) {
+  this.callSuper('_render', ctx);
+
+  // do not render if width/height are zeros or object is not visible
+  if (this.width === 0 || this.height === 0 || !this.visible) return;
+
+  ctx.save();
+
+  var xDiff = this.x2 - this.x1;
+  var yDiff = this.y2 - this.y1;
+  var angle = Math.atan2(yDiff, xDiff);
+  ctx.translate((this.x2 - this.x1) / 2, (this.y2 - this.y1) / 2);
+  ctx.rotate(angle);
+  ctx.beginPath();
+  //move 10px in front of line to start the arrow so it does not have the square line end showing in front (0,0)
+  ctx.moveTo(10, 0);
+  ctx.lineTo(-20, 15);
+  ctx.lineTo(-20, -15);
+  ctx.closePath();
+  ctx.fillStyle = this.stroke;
+  ctx.fill();
+
+  ctx.restore();
+
+}
+});
+
+fabric.LineArrow.fromObject = function(object, callback) {
+callback && callback(new fabric.LineArrow([object.x1, object.y1, object.x2, object.y2], object));
+};
+
+fabric.LineArrow.async = true;
+
+
+var Arrow = (function() {
+function Arrow(canvas, color, callback) {
+  this.canvas = canvas;
+  this.className = 'Arrow';
+  this.isDrawing = false;
+  this.color = color;
+  this.callback = callback;
+  this.bindEvents();
+}
+
+Arrow.prototype.bindEvents = function() {
+  var inst = this;
+  inst.canvas.on('mouse:down', function(o) {
+	inst.onMouseDown(o);
+  });
+  inst.canvas.on('mouse:move', function(o) {
+	inst.onMouseMove(o);
+  });
+  inst.canvas.on('mouse:up', function(o) {
+	inst.onMouseUp(o);
+  });
+  inst.canvas.on('object:moving', function(o) {
+	inst.disable();
+  })
+}
+
+Arrow.prototype.unBindEventes = function () {
+  var inst = this;
+  inst.canvas.off('mouse:down');
+  inst.canvas.off('mouse:up');
+  inst.canvas.off('mouse:move');
+  inst.canvas.off('object:moving');
+}
+
+Arrow.prototype.onMouseUp = function(o) {
+  var inst = this;
+  inst.disable();
+  inst.unBindEventes();
+  if (inst.callback) inst.callback();
+};
+
+Arrow.prototype.onMouseMove = function(o) {
+  var inst = this;
+  if (!inst.isEnable()) {
+	return;
+  }
+
+  var pointer = inst.canvas.getPointer(o.e);
+  var activeObj = inst.canvas.getActiveObject();
+  activeObj.set({
+	x2: pointer.x,
+	y2: pointer.y
+  });
+  activeObj.setCoords();
+  inst.canvas.renderAll();
+};
+
+Arrow.prototype.onMouseDown = function(o) {
+  var inst = this;
+  inst.enable();
+  var pointer = inst.canvas.getPointer(o.e);
+
+  var points = [pointer.x, pointer.y, pointer.x, pointer.y];
+  var line = new fabric.LineArrow(points, {
+	strokeWidth: 5,
+	fill: (inst.color) ? inst.color : 'red',
+	stroke: (inst.color) ? inst.color : 'red',
+	originX: 'center',
+	originY: 'center',
+	hasBorders: false,
+	hasControls: true,
+	selectable: true
+  });
+  
+  inst.canvas.add(line).setActiveObject(line);
+};
+
+Arrow.prototype.isEnable = function() {
+  return this.isDrawing;
+}
+
+Arrow.prototype.enable = function() {
+  this.isDrawing = true;
+}
+
+Arrow.prototype.disable = function() {
+  this.isDrawing = false;
+}
+
+return Arrow;
+}());
+
+
+
+var PDFAnnotate = function(container_id, url, options = {}) {
+	this.number_of_pages = 0;
+	this.pages_rendered = 0;
+	this.active_tool = 1; // 1 - Free hand, 2 - Text, 3 - Arrow, 4 - Rectangle
+	this.fabricObjects = [];
+	this.fabricObjectsData = [];
+	this.color = '#FF0000';
+	this.borderColor = '#000000';
+	this.borderSize = 0;
+	this.font_size = 28;
+	this.active_canvas = 0;
+	this.container_id = container_id;
+	this.url = url;
+	
+	this.pageImageCompression = options.pageImageCompression
+	? options.pageImageCompression.toUpperCase()
+	: "NONE";
+	var inst = this;
+
+	var loadingTask = pdfjsLib.getDocument(this.url);
+	loadingTask.promise.then(function (pdf) {
+		var scale = options.scale ? options.scale : 1.3;
+		inst.number_of_pages = pdf.numPages;
+
+		for (var i = 1; i <= pdf.numPages; i++) {
+			pdf.getPage(i).then(function (page) {
+				var viewport = page.getViewport({scale: scale});
+				var canvas = document.createElement('canvas');
+				document.getElementById(inst.container_id).appendChild(canvas);
+				canvas.className = 'pdf-canvas';
+				canvas.height = viewport.height;
+				canvas.width = viewport.width;
+				context = canvas.getContext('2d');
+
+				var renderContext = {
+					canvasContext: context,
+					viewport: viewport
+				};
+				var renderTask = page.render(renderContext);
+				renderTask.promise.then(function () {
+					$('.pdf-canvas').each(function (index, el) {
+						$(el).attr('id', 'page-' + (index + 1) + '-canvas');
+					});
+					inst.pages_rendered++;
+					if (inst.pages_rendered == inst.number_of_pages) inst.initFabric();
+				});
+			});
+		}
+	}, function (reason) {
+		console.error(reason);
+	});
+
+	this.initFabric = function () {
+		var inst = this;
+		let canvases = $('#' + inst.container_id + ' canvas')
+		canvases.each(function (index, el) {
+			var background = el.toDataURL("image/png");
+			var fabricObj = new fabric.Canvas(el.id, {
+				freeDrawingBrush: {
+					width: 1,
+					color: inst.color
+				}
+			});
+			inst.fabricObjects.push(fabricObj);
+			if (typeof options.onPageUpdated == 'function') {
+				fabricObj.on('object:added', function() {
+					var oldValue = Object.assign({}, inst.fabricObjectsData[index]);
+					inst.fabricObjectsData[index] = fabricObj.toJSON()
+					options.onPageUpdated(index + 1, oldValue, inst.fabricObjectsData[index]) 
+				})
+			}
+			fabricObj.setBackgroundImage(background, fabricObj.renderAll.bind(fabricObj));
+			$(fabricObj.upperCanvasEl).click(function (event) {
+				inst.active_canvas = index;
+				inst.fabricClickHandler(event, fabricObj);
+			});
+			fabricObj.on('after:render', function () {
+				inst.fabricObjectsData[index] = fabricObj.toJSON()
+				fabricObj.off('after:render')
+			})
+
+			if (index === canvases.length - 1 && typeof options.ready === 'function') {
+				options.ready()
+			}
+		});
+	}
+
+	this.fabricClickHandler = function(event, fabricObj) {
+		var inst = this;
+		if (inst.active_tool == 2) {
+			var text = new fabric.IText('ingrese comentario', {
+				left: event.clientX - fabricObj.upperCanvasEl.getBoundingClientRect().left,
+				top: event.clientY - fabricObj.upperCanvasEl.getBoundingClientRect().top,
+				fill: inst.color,
+				fontSize: inst.font_size,
+				selectable: true
+			});
+			fabricObj.add(text);
+			inst.active_tool = 0;
+		}
+	}
+}
+
+PDFAnnotate.prototype.enableSelector = function () {
+	var inst = this;
+	inst.active_tool = 0;
+	if (inst.fabricObjects.length > 0) {
+		$.each(inst.fabricObjects, function (index, fabricObj) {
+			fabricObj.isDrawingMode = false;
+		});
+	}
+}
+
+PDFAnnotate.prototype.enablePencil = function () {
+	
+	var inst = this;
+	inst.active_tool = 1;
+	if (inst.fabricObjects.length > 0) {
+		$.each(inst.fabricObjects, function (index, fabricObj) {
+			fabricObj.isDrawingMode = true;
+		});
+	}
+}
+
+PDFAnnotate.prototype.enableAddText = function () {
+	var inst = this;
+	inst.active_tool = 2;
+	if (inst.fabricObjects.length > 0) {
+		$.each(inst.fabricObjects, function (index, fabricObj) {
+			fabricObj.isDrawingMode = false;
+		});
+	}
+}
+
+
+PDFAnnotate.prototype.addImageToCanvas = function () {
+	var inst = this;
+	var fabricObj = inst.fabricObjects[inst.active_canvas];
+
+	if (fabricObj) {
+		var inputElement = document.createElement("input");
+		inputElement.type = 'file'
+		inputElement.accept = ".jpg,.jpeg,.png,.PNG,.JPG,.JPEG";
+		inputElement.onchange = function() {
+			var reader = new FileReader();
+			reader.addEventListener("load", function () {
+				inputElement.remove()
+				var image = new Image();
+				image.onload = function () {
+					fabricObj.add(new fabric.Image(image))
+				}
+				image.src = this.result;
+			}, false);
+			reader.readAsDataURL(inputElement.files[0]);
+		}
+		document.getElementsByTagName('body')[0].appendChild(inputElement)
+		inputElement.click()
+	} 
+}
+
+PDFAnnotate.prototype.enableRectangle = function () {
+	var inst = this;
+	var fabricObj = inst.fabricObjects[inst.active_canvas];
+	inst.active_tool = 4;
+	if (inst.fabricObjects.length > 0) {
+		$.each(inst.fabricObjects, function (index, fabricObj) {
+			fabricObj.isDrawingMode = false;
+		});
+	}
+
+	var rect = new fabric.Rect({
+		width: 50,
+		height: 50,
+		fill: inst.color,
+		stroke: inst.borderColor,
+		strokeSize: inst.borderSize
+	});
+	fabricObj.add(rect);
+}
+
+PDFAnnotate.prototype.enableAddArrow = function () {
+	var inst = this;
+	inst.active_tool = 3;
+	if (inst.fabricObjects.length > 0) {
+		$.each(inst.fabricObjects, function (index, fabricObj) {
+			fabricObj.isDrawingMode = false;
+			new Arrow(fabricObj, inst.color, function () {
+				inst.active_tool = 0;
+			});
+		});
+	}
+}
+
+
+PDFAnnotate.prototype.deleteSelectedObject = function () {
+	var inst = this;
+	var activeObject = inst.fabricObjects[inst.active_canvas].getActiveObject();
+	if (activeObject)
+	{
+		if (confirm('Desea eliminar elemento ?')) inst.fabricObjects[inst.active_canvas].remove(activeObject);
+	}
+}
+// ------------------------------------------------------------------------------------------------------------------------------
+PDFAnnotate.prototype.savePdf = function (fileName) {
+	
+	var nombre=fileName;
+	
+	var contenido = document.getElementById("textoo").value;
+	var inst = this;
+	var doc = new jspdf.jsPDF();
+	if (typeof fileName === 'undefined') {
+		fileName = `${new Date().getTime()}.pdf`;
+	}
+
+	inst.fabricObjects.forEach(function (fabricObj, index) {
+		if (index != 0) {
+			doc.addPage();
+			doc.setPage(index + 1);
+		}
+		doc.addImage(
+			fabricObj.toDataURL({
+				format: 'png'
+			}), 
+			inst.pageImageCompression == "NONE" ? "PNG" : "JPEG", 
+			0, 
+			0,
+			doc.internal.pageSize.getWidth(), 
+			doc.internal.pageSize.getHeight(),
+			`page-${index + 1}`, 
+			["FAST", "MEDIUM", "SLOW"].indexOf(inst.pageImageCompression) >= 0
+			? inst.pageImageCompression
+			: undefined
+		);
+		if (index === inst.fabricObjects.length - 1) {
+			// knknknksd
+
+var img;
+
+			const opcion1 = document.querySelector('input[name="doc_bati"]');
+			const valor_opcion1 = opcion1.value;
+  const opcion2 = document.querySelector('input[name="doc_meli"]');
+  const valor_opcion2 = opcion2.value;
+
+    if (opcion1.checked) {
+		img = opcion1.value;
+		doc.setFontSize(12);
+		doc.setFont("italic");
+			doc.text(contenido,100, 250 ,{align: 'left',lineHeightFactor: 1.5,maxWidth:60});
+			doc.addImage(img, "PNG", 160, 240, 50, 30);
+			// doc.save(fileName);
+
+
+			var file_data = btoa(doc.output());
+			var form_data= new FormData();
+			form_data.append('file' , file_data);
+			form_data.append('nombre', nombre);
+	
+			$.ajax({
+				url:'mover_.php',
+				datatype:'text',
+				cache:false,
+				contentType:false,
+				processData:false,
+				data: form_data,
+				type:'post',
+				success:function(hola){
+				
+				}
+
+			})
+    } else if (opcion2.checked) {
+		img =  opcion2.value;
+		doc.setFontSize(10);
+					doc.text(contenido,100, 240 ,{align: 'justify',lineHeightFactor: 1.5,maxWidth:60});
+			doc.addImage(img, "PNG", 160, 230, 50, 30);
+			// doc.save(fileName);
+
+
+			var file_data = btoa(doc.output());
+			var form_data= new FormData();
+			form_data.append('file' , file_data);
+			form_data.append('nombre', nombre);
+	
+			$.ajax({
+				url:'mover_.php',
+				datatype:'text',
+				cache:false,
+				contentType:false,
+				processData:false,
+				data: form_data,
+				type:'post',
+				success:function(hola){
+				
+				}
+
+			})
+    }
+	else{
+	
+	}
+  
+			// sdshkdhakhskdh
+
+
+
+			
+
+	
+		
+		}
+	})
+
+
+ 
+
+}
+
+PDFAnnotate.prototype.setBrushSize = function (size) {
+	var inst = this;
+	$.each(inst.fabricObjects, function (index, fabricObj) {
+		fabricObj.freeDrawingBrush.width = size;
+	});
+}
+
+PDFAnnotate.prototype.setColor = function (color) {
+	var inst = this;
+	inst.color = color;
+	$.each(inst.fabricObjects, function (index, fabricObj) {
+		fabricObj.freeDrawingBrush.color = color;
+	});
+}
+
+PDFAnnotate.prototype.setBorderColor = function (color) {
+	var inst = this;
+	inst.borderColor = color;
+}
+
+PDFAnnotate.prototype.setFontSize = function (size) {
+	this.font_size = size;
+}
+
+PDFAnnotate.prototype.setBorderSize = function (size) {
+	this.borderSize = size;
+}
+
+PDFAnnotate.prototype.clearActivePage = function () {
+	var inst = this;
+	var fabricObj = inst.fabricObjects[inst.active_canvas];
+	var bg = fabricObj.backgroundImage;
+	if (confirm('Desea limpiar la pagina?')) {
+		fabricObj.clear();
+		fabricObj.setBackgroundImage(bg, fabricObj.renderAll.bind(fabricObj));
+	}
+}
+
+PDFAnnotate.prototype.serializePdf = function() {
+	var inst = this;
+	return JSON.stringify(inst.fabricObjects, null, 4);
+}
+
+
+
+PDFAnnotate.prototype.loadFromJSON = function(jsonData) {
+	var inst = this;
+	$.each(inst.fabricObjects, function (index, fabricObj) {
+		if (jsonData.length > index) {
+			fabricObj.loadFromJSON(jsonData[index], function () {
+				inst.fabricObjectsData[index] = fabricObj.toJSON()
+			})
+		}
+	})
+}
+	
+
+</script>
+<script>
+
+
+
+	$('#buscar').click(function(e){
+	
+	e.preventDefault();
+	
+	$.ajax({
+		
+		url:'php/buscar.php',
+		type: 'post',
+	
+	   
+	})
+	.done(function(resu){
+		var x = resu;
+	  
+
+
+  var pdf = new PDFAnnotate("pdf-container","archivo_cache/"+ x , {
+	onPageUpdated(page, oldData, newData) {
+	  console.log(page, oldData, newData);
+	},
+	ready() {
+	  console.log("Plugin initialized successfully");
+	  
+	},
+	scale: 1.2,
+	pageImageCompression: "", // FAST, MEDIUM, SLOW(Helps to control the new PDF file size)
+  });
+ 
+
+
+
+$(document).ready(function (){
+
+
+	function changeActiveTool(event) {
+	var element = $(event.target).hasClass("tool-button")
+	  ? $(event.target)
+	  : $(event.target).parents(".tool-button").first();
+	$(".tool-button.active").removeClass("active");
+	$(element).addClass("active");
+}
+
+$('#seleccionar').click(function(e){
+
+	e.preventDefault();
+	changeActiveTool(event);
+	pdf.enableSelector();
+})
+
+
+
+	$('#pencil').click(function(e){
+	e.preventDefault();
+	changeActiveTool(event);
+	pdf.enablePencil();
+	})
+
+	$('#text').click(function(e){
+		  e.preventDefault();
+		  changeActiveTool(event);
+	pdf.enableAddText();
+	})
+
+
+	$('#image').click(function(e){
+		e.preventDefault();
+		changeActiveTool(event);
+		pdf.addImageToCanvas()
+		
+  })
+  $('#select_delete').click(function(e){
+	e.preventDefault();
+	changeActiveTool(event);
+	pdf.deleteSelectedObject();
+	
+})
+$('#clear_page').click(function(e){
+e.preventDefault();
+changeActiveTool(event);
+pdf.clearActivePage();
+
+})
+
+
+   
+  
+$('#save').click(function(e){
+e.preventDefault();
+	
+	const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('click', () => {
+	// Deseleccionar todos los checkboxes excepto el actual
+	checkboxes.forEach((cb) => {
+	  if (cb !== checkbox) {
+		cb.checked = false;
+	  }
+	});
+  });
+});
+
+let algunoSeleccionado = false;
+
+for (let i = 0; i < checkboxes.length; i++) {
+  if (checkboxes[i].checked) {
+    algunoSeleccionado = true;
+    break;
+  } 
+}
+
+
+
+
+	if (algunoSeleccionado==true){	
+	pdf.savePdf(x)
+valor=x;
+$.ajax({
+		url:'php/eliminar.php',
+		type: 'post',
+	success: function(datitos){
+		window.location.reload();
+		function clickbutton() {
+    // simulamos el click del mouse en el boton del formulario
+    $("#buscar").click();
+  }
+  $('#buscar').on('click',function() {
+    console.log('action button clicked');
+  });
+	}
+});
+$.ajax({
+	url:'php/mover_.php',
+	type: 'post',
+success: function(datin){
+alert(datin);
+}
+});
+	}
+	else
+    {
+		Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'Necesito que seleccione quien firma el documento',
+})
+	}
+})
+
+
+})
+
+// function enableAddArrow(event) {
+//     event.preventDefault();
+//     changeActiveTool(event);
+//     pdf.enableAddArrow();
+// }
+
+
+
+// function enableRectangle(event) {
+//     event.preventDefault();
+//     changeActiveTool(event);
+//     pdf.setColor('rgba(255, 0, 0, 0.3)');
+//     pdf.setBorderColor('blue');
+//     pdf.enableRectangle();
+// }
+
+// function deleteSelectedObject(event) {
+//   event.preventDefault();
+//   pdf.deleteSelectedObject();
+// }
+
+// function savePDF() {
+//     // pdf.savePdf();
+//     pdf.savePdf('sample.pdf'); // save with given file name
+// }
+
+// function clearPage() {
+//     pdf.clearActivePage();
+// }
+
+function showPdfData() { 
+
+	var string = pdf.serializePdf();
+	$('#dataModal .modal-body pre').first().text(string);
+	PR.prettyPrint();
+	$('#dataModal').modal('show');
+}
+
+$(function () {
+	$('.color-tool').click(function () {
+		$('.color-tool.active').removeClass('active');
+		$(this).addClass('active');
+		color = $(this).get(0).style.backgroundColor;
+		pdf.setColor(color);
+	});
+
+	$('#brush-size').change(function () {
+		var width = $(this).val();
+		pdf.setBrushSize(width);
+	});
+
+	$('#font-size').change(function () {
+		var font_size = $(this).val();
+		pdf.setFontSize(font_size);
+	});
+});
+
+
+})
+
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>

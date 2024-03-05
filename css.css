@@ -1,0 +1,18 @@
+.pdf-container{
+    position: absolute; /* El elemento hijo debe tener una posición absoluta */
+  top: 0; /* Posición superior del elemento hijo en relación con el contenedor padre */
+  left: 0; /* Posición izquierda del elemento hijo en relación con el contenedor padre */
+  width: 100%; 
+  overflow-y: scroll; /* crear una barra de desplazamiento vertical */
+  touch-action: pan-y; 
+  overflow-x: scroll; /* crear un área de desplazamiento horizontal */
+  -webkit-overflow-scrolling: touch; /* permitir el desplazamiento fluido en Safari en iOS */
+  touch-action: pan-x;
+}
+.contenedor-pdf{
+  overflow-y: scroll; /* crear una barra de desplazamiento vertical */
+  touch-action: pan-y; 
+  overflow-x: scroll; /* crear un área de desplazamiento horizontal */
+  -webkit-overflow-scrolling: touch; /* permitir el desplazamiento fluido en Safari en iOS */
+  touch-action: pan-x;/* permitir el desplazamiento táctil vertical */
+}
